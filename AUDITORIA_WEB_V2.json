@@ -1,0 +1,14 @@
+{
+  "version": "WEB_V2",
+  "tipo": "static_pwa",
+  "node_backend_required": false,
+  "offline": "after_first_online_cache",
+  "storage": "localStorage",
+  "pwa": true,
+  "source_app": "DND_APP_V4_CREACION_PERSONAJE_UI",
+  "mejoras": [
+    "assets_relative_paths_for_github_pages_project_sites",
+    "dark_fantasy_ui_polish",
+    "service_worker_cache_v2"
+  ]
+}

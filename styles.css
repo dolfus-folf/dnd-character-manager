@@ -30,3 +30,89 @@ details[open] > summary::after { content:'−'; }
 .validation.warn { color:#ffca72; }
 .pending pre { white-space:pre-wrap; overflow:auto; font-size:11px; }
 @media(max-width:800px){.adjusted-stats-preview{grid-template-columns:repeat(3,1fr)}.info-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   WEB V2 — DARK FANTASY UI POLISH
+   ============================================================ */
+:root{
+  --bg:#090b10;
+  --panel:#121722;
+  --panel2:#171d2a;
+  --line:#2b3445;
+  --text:#f4f1e8;
+  --muted:#a9afbd;
+  --accent:#c99a4a;
+  --accent2:#f0d7a1;
+  --accent-soft:rgba(201,154,74,.12);
+  --danger:#df7777;
+  --ok:#79c695;
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+body{
+  background:
+    radial-gradient(900px 500px at 50% -120px,rgba(201,154,74,.11),transparent 65%),
+    radial-gradient(700px 500px at 100% 0,rgba(91,83,120,.10),transparent 70%),
+    #090b10;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;
+  background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(to bottom,black,transparent 75%);
+}
+.topbar{
+  border-bottom:1px solid rgba(201,154,74,.22);
+  background:rgba(7,9,13,.88);
+}
+.brand-die{
+  background:var(--accent-soft);
+  box-shadow:0 0 22px rgba(201,154,74,.12);
+}
+.brand strong{font-size:15px}.brand small{letter-spacing:.08em;text-transform:uppercase}
+.app-shell{padding-top:42px}
+.intro h1{
+  font-family:Georgia,'Times New Roman',serif;
+  letter-spacing:-.025em;
+}
+.eyebrow{color:var(--accent2)}
+.form-card,.card,.metric,.sheet-block{
+  background:linear-gradient(145deg,rgba(24,29,41,.97),rgba(14,18,27,.97));
+  border-color:rgba(201,154,74,.14);
+}
+.form-card:hover,.card:hover{border-color:rgba(201,154,74,.24)}
+.section-title>span{color:var(--accent2)}
+.section-title h2,.card h3,.sheet-block h3{font-family:Georgia,'Times New Roman',serif}
+input,select{
+  background:#0a0e15;
+  border-color:#30394b;
+}
+input:hover,select:hover{border-color:#4b5569}
+input:focus,select:focus{box-shadow:0 0 0 3px rgba(201,154,74,.10)}
+.primary{
+  background:linear-gradient(180deg,#d4aa61,#b98537);
+  border-color:#e1bb7a;
+  box-shadow:0 8px 25px rgba(201,154,74,.16);
+}
+.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.ghost:hover{background:rgba(255,255,255,.035)}
+.choice-option:hover,.dynamic-panel details:hover,.accordion:hover{border-color:rgba(201,154,74,.25)}
+.sheet-tabs{position:sticky;top:68px;z-index:5;background:rgba(9,11,16,.90);backdrop-filter:blur(10px);padding-top:10px}
+.sheet-tab.active{background:var(--accent-soft);color:var(--accent2);box-shadow:inset 0 0 0 1px rgba(201,154,74,.18)}
+.metric .value,.stat-card b{font-family:Georgia,'Times New Roman',serif}
+.badge,.tag,.spell-chip{border-color:rgba(201,154,74,.18)}
+.pending{background:rgba(84,58,18,.20);border-color:rgba(201,154,74,.35)}
+
+/* Creation flow */
+.builder-form>.form-card{position:relative;overflow:hidden}
+.builder-form>.form-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(#c99a4a,transparent);
+}
+
+/* Empty/loading state */
+.empty{min-height:260px;display:grid;place-items:center;border:1px dashed var(--line);border-radius:16px;background:rgba(255,255,255,.018)}
+
+@media(max-width:700px){
+  .sheet-tabs{top:60px}
+  .app-shell{padding-top:28px}
+  .intro h1{font-size:32px}
+}

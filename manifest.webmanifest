@@ -1,6 +1,6 @@
 {
-  "name": "D&D Character Manager 2024",
-  "short_name": "D&D Manager",
+  "name": "D&D 2024 — Character Manager",
+  "short_name": "D&D Manager 2024",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#111318",
