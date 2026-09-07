@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D&D 2024 — Character Manager</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-die">d20</span><div><strong>D&D 2024</strong><small>Character Manager</small></div></div>
+  <div class="status" id="status">Cargando datos…</div>
+</header>
+
+<main class="app-shell">
+  <section id="builderView" class="builder-view">
+    <div class="intro"><div><span class="eyebrow">NUEVO PERSONAJE · V3</span><h1>Construye tu aventurero</h1><p>Las elecciones que afectan al personaje se reflejan antes de crearlo. Las reglas que todavía requieren una decisión manual quedan señaladas como pendientes.</p></div></div>
+    <form id="form" class="builder-form">
+      <section class="form-card"><div class="section-title"><span>01</span><div><h2>Identidad y origen</h2><p>Los datos fundamentales del personaje.</p></div></div>
+        <div class="grid two"><label>Nombre<input name="nombre" placeholder="Ej. Aldric" required></label><label>Jugador<input name="jugador" placeholder="Tu nombre"></label></div>
+        <div class="grid four"><label>Especie<select name="especie" id="especie"></select></label><label>Trasfondo<select name="trasfondo" id="trasfondo"></select></label><label>Clase<select name="clase" id="clase"></select></label><label>Nivel<input name="nivel" id="nivel" type="number" min="1" max="20" value="1"></label></div>
+        <label>Subclase<select name="subclase" id="subclase"><option value="">— Se seleccionará cuando corresponda —</option></select></label>
+        <div id="classInfo" class="dynamic-panel hidden"></div>
+        <div id="speciesSelections" class="dynamic-panel hidden"></div>
+      </section>
+
+      <section class="form-card"><div class="section-title"><span>02</span><div><h2>Características</h2><p>Estos son los valores base. Los aumentos del trasfondo se aplicarán automáticamente según tu elección.</p></div></div>
+        <div class="stats-input"><label><b>FUE</b><input name="fuerza" type="number" min="1" max="30" value="10"><small id="m-fuerza">+0</small></label><label><b>DES</b><input name="destreza" type="number" min="1" max="30" value="10"><small id="m-destreza">+0</small></label><label><b>CON</b><input name="constitucion" type="number" min="1" max="30" value="10"><small id="m-constitucion">+0</small></label><label><b>INT</b><input name="inteligencia" type="number" min="1" max="30" value="10"><small id="m-inteligencia">+0</small></label><label><b>SAB</b><input name="sabiduria" type="number" min="1" max="30" value="10"><small id="m-sabiduria">+0</small></label><label><b>CAR</b><input name="carisma" type="number" min="1" max="30" value="10"><small id="m-carisma">+0</small></label></div>
+        <div id="backgroundBonuses" class="dynamic-panel hidden"></div>
+        <div id="adjustedStatsPreview" class="adjusted-stats-preview"></div>
+        <div id="bonusValidation" class="validation"></div>
+        <div id="originPreview" class="preview-note"></div>
+      </section>
+
+      <section class="form-card"><div class="section-title"><span>03</span><div><h2>Competencias y elecciones</h2><p>Las competencias de clase y trasfondo se combinan. Las elecciones se validan antes de crear el personaje.</p></div></div>
+        <div id="classSkills" class="dynamic-grid"></div><div class="grid two"><label>Herramienta del trasfondo<input id="herramientaTrasfondo" placeholder="ID de herramienta/juego"></label><div class="field-note">Las habilidades especiales de la especie aparecen automáticamente arriba cuando corresponda. Las selecciones complejas seguirán apareciendo como pendientes.</div></div><div id="backgroundInfo" class="dynamic-panel hidden"></div>
+        <div><label>Don de origen<input id="doteOrigen" placeholder="Se obtiene automáticamente del trasfondo"></label></div>
+      </section>
+
+      <section class="form-card"><div class="section-title"><span>04</span><div><h2>Equipo inicial</h2><p>Ahora puedes comparar visualmente las opciones A y B antes de elegir.</p></div></div>
+        <div id="classEquipmentPreview" class="equipment-choice-preview"></div>
+        <div id="backgroundEquipmentPreview" class="equipment-choice-preview"></div>
+        <div class="grid two"><label>Elección de equipo de clase<select name="equipo_clase_opcion" id="equipoClase"><option value="">Selecciona una opción</option><option value="a">Opción A</option><option value="b">Opción B</option></select></label><label>Elección de equipo de trasfondo<select name="equipo_trasfondo_opcion" id="equipoTrasfondo"><option value="">Selecciona una opción</option><option value="a">Opción A</option><option value="b">Opción B</option></select></label></div>
+      </section>
+      <button class="primary big" type="submit">Crear personaje <span>→</span></button>
+    </form>
+  </section>
+
+  <section id="sheetView" class="sheet-view hidden">
+    <div class="sheet-toolbar"><button class="ghost" id="backBtn">← Crear otro</button><div class="toolbar-actions"><button class="ghost" id="saveBtn">Guardar localmente</button><button class="primary small" id="levelBtn">Subir de nivel</button></div></div>
+    <div id="sheet"></div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

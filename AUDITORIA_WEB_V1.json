@@ -1,0 +1,9 @@
+{
+  "version": "WEB_V1",
+  "tipo": "static_pwa",
+  "node_backend_required": false,
+  "offline": "after_first_online_cache",
+  "storage": "localStorage",
+  "pwa": true,
+  "source_app": "DND_APP_V4_CREACION_PERSONAJE_UI"
+}
